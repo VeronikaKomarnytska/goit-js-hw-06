@@ -16,15 +16,6 @@ const images = [
 const listRef = document.querySelector(".gallery");
 
 const galleryOfImagesRef = images.map((image) => {
-  const listItemRef = document.createElement("li");
-  // console.log(listItemRef);
-  listItemRef.insertAdjacentHTML(
-    "afterbegin",
-    `<img src="${image.url}" alt="${image.alt}" width = 480>`
-  );
-
-  return listItemRef;
+  return `<li class = "gallery_item"><img src="${image.url}" alt="${image.alt}" width = 480> </li>`;
 });
-// console.log(galleryOfImagesRef);
-listRef.append(...galleryOfImagesRef);
-console.log(listRef);
+listRef.insertAdjacentHTML("afterbegin", galleryOfImagesRef);
